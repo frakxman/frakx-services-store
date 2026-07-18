@@ -2,53 +2,53 @@
   "categories": [
     {
       "id": "1",
-      "name": "Gastronomía",
+      "name": "Gastronomy",
       "image": "https://picsum.photos/640/640?r=101"
     },
     {
       "id": "2",
-      "name": "Desarrollo de Software",
+      "name": "Software Development",
       "image": "https://picsum.photos/640/640?r=102"
     },
     {
       "id": "3",
-      "name": "Producción Multimedia",
+      "name": "Multimedia Production",
       "image": "https://picsum.photos/640/640?r=103"
     },
     {
       "id": "4",
-      "name": "Vuelo de Drones",
+      "name": "Drone Services",
       "image": "https://picsum.photos/640/640?r=104"
     }
   ],
   "products": [
     {
       "id": "1",
-      "name": "Cocinero",
+      "name": "Chef",
       "price": 25,
       "images": ["https://picsum.photos/640/640?r=1"],
       "categoryId": "1",
-      "description": "Servicio de cocina profesional para eventos privados o comerciales. Preparación de menús personalizados con enfoque en presentación y calidad.",
+      "description": "Professional cooking service for private or corporate events. Custom menu preparation with a focus on presentation and quality.",
       "quantity": 1,
       "stock": 0
     },
     {
       "id": "2",
-      "name": "Mesero",
+      "name": "Waiter",
       "price": 15,
       "images": ["https://picsum.photos/640/640?r=2"],
       "categoryId": "1",
-      "description": "Atención y servicio de mesa para eventos sociales o corporativos. Experiencia en protocolo y atención al cliente.",
+      "description": "Table service and guest attention for social or corporate events. Experienced in protocol and customer care.",
       "quantity": 1,
       "stock": 0
     },
     {
       "id": "3",
-      "name": "Barman",
+      "name": "Bartender",
       "price": 20,
       "images": ["https://picsum.photos/640/640?r=3"],
       "categoryId": "1",
-      "description": "Preparación de cócteles y bebidas para eventos, con montaje de barra y servicio personalizado.",
+      "description": "Cocktail and drink preparation for events, including bar setup and personalized service.",
       "quantity": 1,
       "stock": 0
     },
@@ -58,7 +58,7 @@
       "price": 18,
       "images": ["https://picsum.photos/640/640?r=4"],
       "categoryId": "1",
-      "description": "Preparación de café de especialidad para eventos, con montaje de estación y técnicas de latte art.",
+      "description": "Specialty coffee preparation for events, including station setup and latte art techniques.",
       "quantity": 1,
       "stock": 0
     },
@@ -68,7 +68,7 @@
       "price": 30,
       "images": ["https://picsum.photos/640/640?r=5"],
       "categoryId": "1",
-      "description": "Asesoría y maridaje de vinos para eventos y restaurantes, incluyendo selección y presentación de la carta.",
+      "description": "Wine advisory and pairing for events and restaurants, including selection and menu presentation.",
       "quantity": 1,
       "stock": 0
     },
@@ -78,7 +78,7 @@
       "price": 35,
       "images": ["https://picsum.photos/640/640?r=6"],
       "categoryId": "2",
-      "description": "Desarrollo de interfaces web modernas y responsivas usando Angular y Vue, con enfoque en rendimiento y experiencia de usuario.",
+      "description": "Development of modern, responsive web interfaces using Angular and Vue, focused on performance and user experience.",
       "quantity": 1,
       "stock": 10
     },
@@ -88,7 +88,7 @@
       "price": 40,
       "images": ["https://picsum.photos/640/640?r=7"],
       "categoryId": "2",
-      "description": "Construcción de APIs escalables y servicios backend con NodeJS y NestJS, incluyendo autenticación y buenas prácticas de arquitectura.",
+      "description": "Building scalable APIs and backend services with NodeJS and NestJS, including authentication and architecture best practices.",
       "quantity": 1,
       "stock": 10
     },
@@ -98,7 +98,7 @@
       "price": 45,
       "images": ["https://picsum.photos/640/640?r=8"],
       "categoryId": "2",
-      "description": "Desarrollo integral de aplicaciones web de principio a fin, cubriendo frontend, backend y despliegue.",
+      "description": "End-to-end web application development, covering frontend, backend, and deployment.",
       "quantity": 1,
       "stock": 10
     },
@@ -108,7 +108,7 @@
       "price": 50,
       "images": ["https://picsum.photos/640/640?r=9"],
       "categoryId": "2",
-      "description": "Diseño de arquitecturas en la nube sobre AWS, optimizando costos, seguridad y escalabilidad de infraestructura.",
+      "description": "Cloud architecture design on AWS, optimizing cost, security, and infrastructure scalability.",
       "quantity": 1,
       "stock": 10
     },
@@ -118,177 +118,177 @@
       "price": 50,
       "images": ["https://picsum.photos/640/640?r=10"],
       "categoryId": "2",
-      "description": "Implementación y administración de soluciones en Google Cloud Platform, con enfoque en despliegue y monitoreo.",
+      "description": "Implementation and administration of solutions on Google Cloud Platform, focused on deployment and monitoring.",
       "quantity": 1,
       "stock": 10
     },
     {
       "id": "11",
-      "name": "Data Analysis Python",
+      "name": "Data Analysis (Python)",
       "price": 38,
       "images": ["https://picsum.photos/640/640?r=11"],
       "categoryId": "2",
-      "description": "Análisis y visualización de datos con Python (Pandas, NumPy, Matplotlib), orientado a la toma de decisiones basada en datos.",
+      "description": "Data analysis and visualization using Python (Pandas, NumPy, Matplotlib), oriented toward data-driven decision making.",
       "quantity": 1,
       "stock": 10
     },
     {
       "id": "12",
-      "name": "Fotógrafo",
+      "name": "Photographer",
       "price": 60,
       "images": ["https://picsum.photos/640/640?r=12"],
       "categoryId": "3",
-      "description": "Sesiones fotográficas profesionales para eventos, retratos, productos o marcas, con entrega editada en alta resolución.",
+      "description": "Professional photo sessions for events, portraits, products, or brands, delivered edited in high resolution.",
       "quantity": 1,
       "stock": 10
     },
     {
       "id": "13",
-      "name": "Editor de fotografía",
+      "name": "Photo Editor",
       "price": 25,
       "images": ["https://picsum.photos/640/640?r=13"],
       "categoryId": "3",
-      "description": "Retoque y edición profesional de fotografías, corrección de color y composición para uso comercial o personal.",
+      "description": "Professional photo retouching and editing, color correction and composition for commercial or personal use.",
       "quantity": 1,
       "stock": 10
     },
     {
       "id": "14",
-      "name": "Videógrafo",
+      "name": "Videographer",
       "price": 80,
       "images": ["https://picsum.photos/640/640?r=14"],
       "categoryId": "3",
-      "description": "Producción audiovisual para eventos, publicidad o contenido corporativo, incluyendo grabación multicámara.",
+      "description": "Audiovisual production for events, advertising, or corporate content, including multi-camera recording.",
       "quantity": 1,
       "stock": 10
     },
     {
       "id": "15",
-      "name": "Editor de video",
+      "name": "Video Editor",
       "price": 35,
       "images": ["https://picsum.photos/640/640?r=15"],
       "categoryId": "3",
-      "description": "Edición y postproducción de video, incluyendo color grading, motion graphics y mezcla de audio básica.",
+      "description": "Video editing and post-production, including color grading, motion graphics, and basic audio mixing.",
       "quantity": 1,
       "stock": 10
     },
     {
       "id": "16",
-      "name": "Cuñas radiales",
+      "name": "Radio Ads & Jingles",
       "price": 20,
       "images": ["https://picsum.photos/640/640?r=16"],
       "categoryId": "3",
-      "description": "Producción de cuñas publicitarias para radio o pauta digital, incluyendo guion, locución y musicalización.",
+      "description": "Production of radio or digital ad spots, including scriptwriting, voiceover, and music production.",
       "quantity": 1,
       "stock": 10
     },
     {
       "id": "17",
-      "name": "Editor de audio",
+      "name": "Audio Editor",
       "price": 22,
       "images": ["https://picsum.photos/640/640?r=17"],
       "categoryId": "3",
-      "description": "Edición, limpieza y masterización de audio para podcasts, spots publicitarios o contenido multimedia.",
+      "description": "Editing, cleanup, and mastering of audio for podcasts, ad spots, or multimedia content.",
       "quantity": 1,
       "stock": 10
     },
     {
       "id": "18",
-      "name": "Campañas en redes sociales",
+      "name": "Social Media Campaigns",
       "price": 45,
       "images": ["https://picsum.photos/640/640?r=18"],
       "categoryId": "3",
-      "description": "Planeación y ejecución de campañas de contenido y pauta para redes sociales, orientadas a crecimiento y conversión.",
+      "description": "Planning and execution of content and paid campaigns for social media, aimed at growth and conversion.",
       "quantity": 1,
       "stock": 10
     },
     {
       "id": "19",
-      "name": "Diseño de logos",
+      "name": "Logo Design",
       "price": 30,
       "images": ["https://picsum.photos/640/640?r=19"],
       "categoryId": "3",
-      "description": "Diseño de identidad visual y logotipos, incluyendo propuestas conceptuales y entregables en distintos formatos.",
+      "description": "Visual identity and logo design, including concept proposals and deliverables in multiple formats.",
       "quantity": 1,
       "stock": 10
     },
     {
       "id": "20",
-      "name": "Imagen corporativa",
+      "name": "Corporate Branding",
       "price": 55,
       "images": ["https://picsum.photos/640/640?r=20"],
       "categoryId": "3",
-      "description": "Desarrollo de manual de marca e imagen corporativa integral, alineada a los objetivos de comunicación del negocio.",
+      "description": "Development of a full brand manual and corporate identity, aligned with the business's communication goals.",
       "quantity": 1,
       "stock": 10
     },
     {
       "id": "21",
-      "name": "Fotografía",
+      "name": "Aerial Photography",
       "price": 70,
       "images": ["https://picsum.photos/640/640?r=21"],
       "categoryId": "4",
-      "description": "Fotografía aérea con drone para bienes raíces, eventos o proyectos comerciales, con entrega editada.",
+      "description": "Drone aerial photography for real estate, events, or commercial projects, delivered edited.",
       "quantity": 1,
       "stock": 10
     },
     {
       "id": "22",
-      "name": "Video",
+      "name": "Aerial Video",
       "price": 90,
       "images": ["https://picsum.photos/640/640?r=22"],
       "categoryId": "4",
-      "description": "Producción de video aéreo con drone para publicidad, eventos o inspección visual de proyectos.",
+      "description": "Drone aerial video production for advertising, events, or visual project inspection.",
       "quantity": 1,
       "stock": 10
     },
     {
       "id": "23",
-      "name": "Fotogrametría",
+      "name": "Photogrammetry",
       "price": 120,
       "images": ["https://picsum.photos/640/640?r=23"],
       "categoryId": "4",
-      "description": "Levantamiento de datos aéreos para generación de modelos 3D, ortomosaicos y mediciones topográficas.",
+      "description": "Aerial data collection for generating 3D models, orthomosaics, and topographic measurements.",
       "quantity": 1,
       "stock": 10
     },
     {
       "id": "24",
-      "name": "Vuelo nocturno",
+      "name": "Night Flight",
       "price": 100,
       "images": ["https://picsum.photos/640/640?r=24"],
       "categoryId": "4",
-      "description": "Operación de drone en condiciones nocturnas para inspección, seguridad o producción audiovisual especializada.",
+      "description": "Drone operation under nighttime conditions for inspection, security, or specialized audiovisual production.",
       "quantity": 1,
       "stock": 10
     },
     {
       "id": "25",
-      "name": "Vuelo comercial con mercancía",
+      "name": "Commercial Cargo Flight",
       "price": 150,
       "images": ["https://picsum.photos/640/640?r=25"],
       "categoryId": "4",
-      "description": "Transporte aéreo de mercancía mediante drone para entregas rápidas o logística en zonas de difícil acceso.",
+      "description": "Drone-based cargo transport for fast deliveries or logistics in hard-to-reach areas.",
       "quantity": 1,
       "stock": 10
     },
     {
       "id": "26",
-      "name": "Fumigación",
+      "name": "Crop Spraying",
       "price": 110,
       "images": ["https://picsum.photos/640/640?r=26"],
       "categoryId": "4",
-      "description": "Fumigación agrícola de precisión con drone, optimizando el uso de insumos y reduciendo tiempos de aplicación.",
+      "description": "Precision agricultural spraying using drone technology, optimizing input usage and reducing application time.",
       "quantity": 1,
       "stock": 10
     },
     {
       "id": "27",
-      "name": "VBLOS",
+      "name": "VBLOS Operations",
       "price": 95,
       "images": ["https://picsum.photos/640/640?r=27"],
       "categoryId": "4",
-      "description": "Operaciones de vuelo más allá de la línea de vista visual (BVLOS/VBLOS) para proyectos de largo alcance.",
+      "description": "Beyond visual line of sight (BVLOS/VBLOS) flight operations for long-range projects.",
       "quantity": 1,
       "stock": 10
     }
