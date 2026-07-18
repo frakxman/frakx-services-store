@@ -1,175 +1,296 @@
 {
-  "products": [
+  "categories": [
     {
       "id": "1",
-      "name": "Orangiata",
-      "price": 100,
-      "images": [
-        "https://picsum.photos/640/640?r=10"
-      ],
-      "categoryId": 1,
-      "description": "La jugosa y refrescante naranja es un fruto emblemático de la categoría de frutas. Con su brillante color y sabor dulce y cítrico, es una fuente de vitamina C y antioxidantes. Perfecta para jugos, ensaladas o simplemente como un snack saludable. Disfruta de su frescura y beneficios para la salud en cada bocado.",
-      "quantity": 1,
-      "stock": 10
+      "name": "Gastronomía",
+      "image": "https://picsum.photos/640/640?r=101"
     },
     {
       "id": "2",
-      "name": "Pro 2",
-      "price": 200,
-      "images": [
-        "https://picsum.photos/640/640?r=20",
-        "https://picsum.photos/640/640?r=21",
-        "https://picsum.photos/640/640?r=22"
-      ],
-      "categoryId": 1,
-      "description": "Product description",
-      "quantity": 1,
-      "stock": 10
+      "name": "Desarrollo de Software",
+      "image": "https://picsum.photos/640/640?r=102"
     },
     {
       "id": "3",
-      "name": "Pro 3",
-      "price": 300,
-      "images": [
-        "https://picsum.photos/640/640?r=30",
-        "https://picsum.photos/640/640?r=31",
-        "https://picsum.photos/640/640?r=32"
-      ],
-      "categoryId": 2,
-      "description": "Product description",
-      "quantity": 1,
-      "stock": 10
+      "name": "Producción Multimedia",
+      "image": "https://picsum.photos/640/640?r=103"
     },
     {
       "id": "4",
-      "name": "Pro 4",
-      "price": 400,
-      "images": [
-        "https://picsum.photos/640/640?r=40",
-        "https://picsum.photos/640/640?r=41",
-        "https://picsum.photos/640/640?r=42"
-      ],
-      "categoryId": 2,
-      "description": "Product description",
+      "name": "Vuelo de Drones",
+      "image": "https://picsum.photos/640/640?r=104"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "Cocinero",
+      "price": 25,
+      "images": ["https://picsum.photos/640/640?r=1"],
+      "categoryId": "1",
+      "description": "Servicio de cocina profesional para eventos privados o comerciales. Preparación de menús personalizados con enfoque en presentación y calidad.",
       "quantity": 1,
-      "stock": 10
+      "stock": 0
+    },
+    {
+      "id": "2",
+      "name": "Mesero",
+      "price": 15,
+      "images": ["https://picsum.photos/640/640?r=2"],
+      "categoryId": "1",
+      "description": "Atención y servicio de mesa para eventos sociales o corporativos. Experiencia en protocolo y atención al cliente.",
+      "quantity": 1,
+      "stock": 0
+    },
+    {
+      "id": "3",
+      "name": "Barman",
+      "price": 20,
+      "images": ["https://picsum.photos/640/640?r=3"],
+      "categoryId": "1",
+      "description": "Preparación de cócteles y bebidas para eventos, con montaje de barra y servicio personalizado.",
+      "quantity": 1,
+      "stock": 0
+    },
+    {
+      "id": "4",
+      "name": "Barista",
+      "price": 18,
+      "images": ["https://picsum.photos/640/640?r=4"],
+      "categoryId": "1",
+      "description": "Preparación de café de especialidad para eventos, con montaje de estación y técnicas de latte art.",
+      "quantity": 1,
+      "stock": 0
     },
     {
       "id": "5",
-      "name": "Pro 5",
-      "price": 500,
-      "images": [
-        "https://picsum.photos/640/640?r=50",
-        "https://picsum.photos/640/640?r=51",
-        "https://picsum.photos/640/640?r=52"
-      ],
-      "categoryId": 3,
-      "description": "Product description",
+      "name": "Sommelier",
+      "price": 30,
+      "images": ["https://picsum.photos/640/640?r=5"],
+      "categoryId": "1",
+      "description": "Asesoría y maridaje de vinos para eventos y restaurantes, incluyendo selección y presentación de la carta.",
       "quantity": 1,
-      "stock": 10
+      "stock": 0
     },
     {
       "id": "6",
-      "name": "Pro 6",
-      "price": 600,
-      "images": [
-        "https://picsum.photos/640/640?r=60",
-        "https://picsum.photos/640/640?r=61",
-        "https://picsum.photos/640/640?r=62"
-      ],
-      "categoryId": 4,
-      "description": "Product description",
+      "name": "Frontend (Angular, Vue)",
+      "price": 35,
+      "images": ["https://picsum.photos/640/640?r=6"],
+      "categoryId": "2",
+      "description": "Desarrollo de interfaces web modernas y responsivas usando Angular y Vue, con enfoque en rendimiento y experiencia de usuario.",
       "quantity": 1,
       "stock": 10
     },
     {
       "id": "7",
-      "name": "Pro 7",
-      "price": 700,
-      "images": [
-        "https://picsum.photos/640/640?r=70",
-        "https://picsum.photos/640/640?r=71",
-        "https://picsum.photos/640/640?r=72"
-      ],
-      "categoryId": 2,
-      "description": "Product description",
+      "name": "Backend (NodeJS, NestJS)",
+      "price": 40,
+      "images": ["https://picsum.photos/640/640?r=7"],
+      "categoryId": "2",
+      "description": "Construcción de APIs escalables y servicios backend con NodeJS y NestJS, incluyendo autenticación y buenas prácticas de arquitectura.",
       "quantity": 1,
       "stock": 10
     },
     {
       "id": "8",
-      "name": "Carrot",
-      "description": "knfgbkgfnbsfk bsgknfgk",
-      "price": 1500,
+      "name": "Fullstack",
+      "price": 45,
+      "images": ["https://picsum.photos/640/640?r=8"],
       "categoryId": "2",
-      "quantity": 0,
-      "stock": 10,
-      "images": [
-        ""
-      ]
+      "description": "Desarrollo integral de aplicaciones web de principio a fin, cubriendo frontend, backend y despliegue.",
+      "quantity": 1,
+      "stock": 10
     },
     {
       "id": "9",
-      "name": "Onion",
-      "description": "ffdgb ncb",
-      "price": 12345,
+      "name": "AWS Solution Architect Associate",
+      "price": 50,
+      "images": ["https://picsum.photos/640/640?r=9"],
       "categoryId": "2",
-      "quantity": 0,
-      "stock": 12,
-      "images": [
-        "https://picsum.photos/640/640?r=0.5210141945575326"
-      ]
+      "description": "Diseño de arquitecturas en la nube sobre AWS, optimizando costos, seguridad y escalabilidad de infraestructura.",
+      "quantity": 1,
+      "stock": 10
     },
     {
       "id": "10",
-      "name": "Banana",
-      "description": "ndfbndjjbd ",
-      "price": 123,
-      "categoryId": "1",
-      "quantity": 0,
-      "stock": 12,
-      "images": [
-        "https://picsum.photos/640/640?r=0.6042087843404365"
-      ]
+      "name": "Google Cloud Certified Associate Cloud Engineer (ACE)",
+      "price": 50,
+      "images": ["https://picsum.photos/640/640?r=10"],
+      "categoryId": "2",
+      "description": "Implementación y administración de soluciones en Google Cloud Platform, con enfoque en despliegue y monitoreo.",
+      "quantity": 1,
+      "stock": 10
+    },
+    {
+      "id": "11",
+      "name": "Data Analysis Python",
+      "price": 38,
+      "images": ["https://picsum.photos/640/640?r=11"],
+      "categoryId": "2",
+      "description": "Análisis y visualización de datos con Python (Pandas, NumPy, Matplotlib), orientado a la toma de decisiones basada en datos.",
+      "quantity": 1,
+      "stock": 10
     },
     {
       "id": "12",
-      "name": "Lemo",
-      "description": "El jugoso y refrescante limón es un fruto emblemático de la categoría de frutas. Con su brillante color y sabor dulce y cítrico, es una fuente de vitamina C y antioxidantes. Perfecta para jugos, ensaladas o simplemente como un snack saludable. Disfruta de su frescura y beneficios para la salud en cada bocado.",
-      "price": 1000,
-      "categoryId": 1,
+      "name": "Fotógrafo",
+      "price": 60,
+      "images": ["https://picsum.photos/640/640?r=12"],
+      "categoryId": "3",
+      "description": "Sesiones fotográficas profesionales para eventos, retratos, productos o marcas, con entrega editada en alta resolución.",
       "quantity": 1,
-      "stock": 10,
-      "images": [
-        "https://picsum.photos/640/640?r=0.35165764903074304"
-      ]
-    }
-  ],
-  "categories": [
-    {
-      "id": "1",
-      "name": "Fruits",
-      "image": "https://picsum.photos/640/640?r=1"
+      "stock": 10
     },
     {
-      "id": "2",
-      "name": "Vegetables",
-      "image": "https://picsum.photos/640/640?r=2"
+      "id": "13",
+      "name": "Editor de fotografía",
+      "price": 25,
+      "images": ["https://picsum.photos/640/640?r=13"],
+      "categoryId": "3",
+      "description": "Retoque y edición profesional de fotografías, corrección de color y composición para uso comercial o personal.",
+      "quantity": 1,
+      "stock": 10
     },
     {
-      "id": "3",
-      "name": "Grains",
-      "image": "https://picsum.photos/640/640?r=3"
+      "id": "14",
+      "name": "Videógrafo",
+      "price": 80,
+      "images": ["https://picsum.photos/640/640?r=14"],
+      "categoryId": "3",
+      "description": "Producción audiovisual para eventos, publicidad o contenido corporativo, incluyendo grabación multicámara.",
+      "quantity": 1,
+      "stock": 10
     },
     {
-      "id": "4",
-      "name": "Grocery",
-      "image": "https://picsum.photos/640/640?r=4"
+      "id": "15",
+      "name": "Editor de video",
+      "price": 35,
+      "images": ["https://picsum.photos/640/640?r=15"],
+      "categoryId": "3",
+      "description": "Edición y postproducción de video, incluyendo color grading, motion graphics y mezcla de audio básica.",
+      "quantity": 1,
+      "stock": 10
     },
     {
-      "id": "5",
-      "name": "Others",
-      "image": "https://picsum.photos/640/640?r=5"
+      "id": "16",
+      "name": "Cuñas radiales",
+      "price": 20,
+      "images": ["https://picsum.photos/640/640?r=16"],
+      "categoryId": "3",
+      "description": "Producción de cuñas publicitarias para radio o pauta digital, incluyendo guion, locución y musicalización.",
+      "quantity": 1,
+      "stock": 10
+    },
+    {
+      "id": "17",
+      "name": "Editor de audio",
+      "price": 22,
+      "images": ["https://picsum.photos/640/640?r=17"],
+      "categoryId": "3",
+      "description": "Edición, limpieza y masterización de audio para podcasts, spots publicitarios o contenido multimedia.",
+      "quantity": 1,
+      "stock": 10
+    },
+    {
+      "id": "18",
+      "name": "Campañas en redes sociales",
+      "price": 45,
+      "images": ["https://picsum.photos/640/640?r=18"],
+      "categoryId": "3",
+      "description": "Planeación y ejecución de campañas de contenido y pauta para redes sociales, orientadas a crecimiento y conversión.",
+      "quantity": 1,
+      "stock": 10
+    },
+    {
+      "id": "19",
+      "name": "Diseño de logos",
+      "price": 30,
+      "images": ["https://picsum.photos/640/640?r=19"],
+      "categoryId": "3",
+      "description": "Diseño de identidad visual y logotipos, incluyendo propuestas conceptuales y entregables en distintos formatos.",
+      "quantity": 1,
+      "stock": 10
+    },
+    {
+      "id": "20",
+      "name": "Imagen corporativa",
+      "price": 55,
+      "images": ["https://picsum.photos/640/640?r=20"],
+      "categoryId": "3",
+      "description": "Desarrollo de manual de marca e imagen corporativa integral, alineada a los objetivos de comunicación del negocio.",
+      "quantity": 1,
+      "stock": 10
+    },
+    {
+      "id": "21",
+      "name": "Fotografía",
+      "price": 70,
+      "images": ["https://picsum.photos/640/640?r=21"],
+      "categoryId": "4",
+      "description": "Fotografía aérea con drone para bienes raíces, eventos o proyectos comerciales, con entrega editada.",
+      "quantity": 1,
+      "stock": 10
+    },
+    {
+      "id": "22",
+      "name": "Video",
+      "price": 90,
+      "images": ["https://picsum.photos/640/640?r=22"],
+      "categoryId": "4",
+      "description": "Producción de video aéreo con drone para publicidad, eventos o inspección visual de proyectos.",
+      "quantity": 1,
+      "stock": 10
+    },
+    {
+      "id": "23",
+      "name": "Fotogrametría",
+      "price": 120,
+      "images": ["https://picsum.photos/640/640?r=23"],
+      "categoryId": "4",
+      "description": "Levantamiento de datos aéreos para generación de modelos 3D, ortomosaicos y mediciones topográficas.",
+      "quantity": 1,
+      "stock": 10
+    },
+    {
+      "id": "24",
+      "name": "Vuelo nocturno",
+      "price": 100,
+      "images": ["https://picsum.photos/640/640?r=24"],
+      "categoryId": "4",
+      "description": "Operación de drone en condiciones nocturnas para inspección, seguridad o producción audiovisual especializada.",
+      "quantity": 1,
+      "stock": 10
+    },
+    {
+      "id": "25",
+      "name": "Vuelo comercial con mercancía",
+      "price": 150,
+      "images": ["https://picsum.photos/640/640?r=25"],
+      "categoryId": "4",
+      "description": "Transporte aéreo de mercancía mediante drone para entregas rápidas o logística en zonas de difícil acceso.",
+      "quantity": 1,
+      "stock": 10
+    },
+    {
+      "id": "26",
+      "name": "Fumigación",
+      "price": 110,
+      "images": ["https://picsum.photos/640/640?r=26"],
+      "categoryId": "4",
+      "description": "Fumigación agrícola de precisión con drone, optimizando el uso de insumos y reduciendo tiempos de aplicación.",
+      "quantity": 1,
+      "stock": 10
+    },
+    {
+      "id": "27",
+      "name": "VBLOS",
+      "price": 95,
+      "images": ["https://picsum.photos/640/640?r=27"],
+      "categoryId": "4",
+      "description": "Operaciones de vuelo más allá de la línea de vista visual (BVLOS/VBLOS) para proyectos de largo alcance.",
+      "quantity": 1,
+      "stock": 10
     }
   ],
   "users": [
@@ -216,36 +337,5 @@
       "role": "user"
     }
   ],
-  "orders": [
-    {
-      "id": "cef5",
-      "userId": "4",
-      "locationData": {
-        "name": "Myriam Restrepo",
-        "email": "myr@iam.com",
-        "address": "Mz 21 casa 20 Barrio La Adiela",
-        "phone": "4128323"
-      },
-      "payMethodData": {
-        "cardNumber": "54385327997",
-        "expiryDate": "02/28",
-        "cvv": "687"
-      },
-      "products": [
-        {
-          "id": "1",
-          "name": "Orangiata",
-          "price": 100,
-          "images": [
-            "https://picsum.photos/640/640?r=10"
-          ],
-          "categoryId": 1,
-          "description": "La jugosa y refrescante naranja es un fruto emblemático de la categoría de frutas. Con su brillante color y sabor dulce y cítrico, es una fuente de vitamina C y antioxidantes. Perfecta para jugos, ensaladas o simplemente como un snack saludable. Disfruta de su frescura y beneficios para la salud en cada bocado.",
-          "quantity": 1,
-          "stock": 10
-        }
-      ],
-      "total": 100
-    }
-  ]
+  "orders": []
 }
