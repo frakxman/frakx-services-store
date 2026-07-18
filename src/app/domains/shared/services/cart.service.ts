@@ -1,5 +1,5 @@
 import { Injectable, computed, inject, signal } from '@angular/core';
-import { HttpClient } from '@angular/common/http'; 
+import { HttpClient } from '@angular/common/http';
 
 import { environment } from '@env/environments';
 
@@ -11,7 +11,7 @@ import { Product } from '../models/product.model';
 export class CartService {
 
   private readonly baseUrl: string = environment.baseUrl;
-  
+
   private http = inject(HttpClient);
 
   cart = signal<Product[]>([]);
@@ -25,55 +25,63 @@ export class CartService {
   });
 
   find(id: string) {
-    return this.cart().find(product => product._id === id);
+    return this.cart().find(product => product.id === id);
   }
 
   add(product: Product) {
     this.cart.update(state => {
-      const existingProductIndex = state.findIndex(item => item._id === product._id)
+      const existingProductIndex = state.findIndex(item => item.id === product.id)
       if (existingProductIndex !== -1) {
         const updatedCart = [...state];
-        updatedCart[existingProductIndex].quantity += 1;
+        updatedCart[existingProductIndex] = {
+          ...updatedCart[existingProductIndex],
+          quantity: updatedCart[existingProductIndex].quantity + 1
+        };
         return updatedCart;
       } else {
-        return [...state, product];
+        return [...state, { ...product, quantity: 1 }];
       }
     });
   }
 
   decreaseQuantity(product: Product) {
-  this.cart.update(state => {
-    const existingProductIndex = state.findIndex(item => item._id === product._id);
-    if (existingProductIndex !== -1) {
-      const updatedCart = [...state];
-      updatedCart[existingProductIndex].quantity -= 1;
+    this.cart.update(state => {
+      const existingProductIndex = state.findIndex(item => item.id === product.id);
+      if (existingProductIndex !== -1) {
+        const updatedCart = [...state];
+        const newQuantity = updatedCart[existingProductIndex].quantity - 1;
 
-      if (updatedCart[existingProductIndex].quantity === 0) {
-        updatedCart.splice(existingProductIndex, 1);
+        if (newQuantity <= 0) {
+          updatedCart.splice(existingProductIndex, 1);
+        } else {
+          updatedCart[existingProductIndex] = {
+            ...updatedCart[existingProductIndex],
+            quantity: newQuantity
+          };
+        }
+
+        return updatedCart;
+      } else {
+        return state;
       }
+    });
+  }
 
-      return updatedCart;
-    } else {
-      return state;
-    }
-  });
-}
-
-removeProduct(product: Product) {
-  this.cart.update(state => {
-    const existingProductIndex = state.findIndex(item => item._id === product._id);
-    if (existingProductIndex !== -1) {
-      const updatedCart = [...state];
-      updatedCart.splice(existingProductIndex, 1);
-      return updatedCart;
-    } else {
-      return state;
-    }
-  });
-}
+  removeProduct(product: Product) {
+    this.cart.update(state => {
+      const existingProductIndex = state.findIndex(item => item.id === product.id);
+      if (existingProductIndex !== -1) {
+        const updatedCart = [...state];
+        updatedCart.splice(existingProductIndex, 1);
+        return updatedCart;
+      } else {
+        return state;
+      }
+    });
+  }
 
   updateQuantity(product: Product, quantity: number) {
-    this.cart.update(state => state.map( p => p._id === product._id ? { ...p, quantity } : p ));
+    this.cart.update(state => state.map( p => p.id === product.id ? { ...p, quantity } : p ));
   }
 
   generateOrder(orderData: any) {
