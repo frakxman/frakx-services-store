@@ -1,6 +1,6 @@
 {
-  "name": "fruver-store",
-  "version": "0.0.0",
+  "name": "frakx-services-store",
+  "version": "0.1.0",
   "scripts": {
     "ng": "ng",
     "backend": "json-server --watch data/db.json",
