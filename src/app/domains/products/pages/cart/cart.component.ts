@@ -40,7 +40,7 @@ export default class CartComponent implements OnInit  {
 
   ngOnInit(): void {
     this.authService.user$.subscribe(user => {
-      this.userId = user?._id ?? '';
+      this.userId = user?.id ?? '';
     });
     this.logged = !!this.userId;
   }
@@ -75,7 +75,7 @@ export default class CartComponent implements OnInit  {
     const orderData = {
       userId: this.userId,
       date: new Date(),
-      products: this.cart().map(product => product._id),
+      products: this.cart().map(product => product.id),
     };
     console.log('Order generated', orderData);
 

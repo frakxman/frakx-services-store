@@ -22,7 +22,7 @@ export default class FormComponent {
   router = inject(Router);
 
   product: Product = {
-    _id: '',
+    id: '',
     name: '',
     description: '',
     price: 0,
@@ -34,7 +34,7 @@ export default class FormComponent {
   prods = signal<Product[]>([]);
 
   public productForm: FormGroup = this.fb.group({
-    _id: [''],
+    id: [''],
     name: ['', [Validators.required, Validators.minLength(3)]],
     description: ['', [Validators.required]],
     price: ['', [Validators.required, Validators.min(1)]],
@@ -44,12 +44,11 @@ export default class FormComponent {
 
   ngOnInit() {
     this.getProducts();
-    this.getProducts();
     if ( !this.router.url.includes('edit') ) return;
     this.activatedRoute.params
     .pipe(
       switchMap(({ id }) => this.productService.getOne(id)),
-      tap(prod => console.log('Product id', prod._id))
+      tap(prod => console.log('Product id', prod.id))
     ).subscribe({
       next: prod => {
         this.productForm.reset({
@@ -82,12 +81,12 @@ export default class FormComponent {
     if (this.productForm.invalid) return;
 
     // To edit a product
-    if (this.currentProduct._id) {
-      const { _id, ...productWithoutId } = this.productForm.value;
-      this.productService.update(this.currentProduct._id, productWithoutId)
+    if (this.currentProduct.id) {
+      const { id, ...productWithoutId } = this.productForm.value;
+      this.productService.update(this.currentProduct.id, productWithoutId)
         .subscribe({
           next: (product) => {
-            const index = this.prods().findIndex(p => p._id === product._id);
+            const index = this.prods().findIndex(p => p.id === product.id);
             this.prods.update(state => {
               state[index] = product;
               this.router.navigate(['/admin/products']);
@@ -108,10 +107,10 @@ export default class FormComponent {
       quantity: 1,
     };
 
-    delete product._id;
+    delete product.id;
 
     if (!product.images || product.images.length === 0) {
-      product.images = [defaultImage]; 
+      product.images = [defaultImage];
     }
 
     this.productService.create(product)

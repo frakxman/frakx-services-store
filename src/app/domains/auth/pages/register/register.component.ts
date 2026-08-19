@@ -21,7 +21,7 @@ export default class RegisterComponent {
   private router = inject(Router);
 
   user: User = {
-    _id: '',
+    id: '',
     name: '',
     email: '',
     password: '',

@@ -1,5 +1,5 @@
 <div class="group rounded-lg border">
-  <a [routerLink]="['/products', product._id]" class="w-full overflow-hidden rounded-t-lg bg-gray-200">
+  <a [routerLink]="['/products', product.id]" class="w-full overflow-hidden rounded-t-lg bg-gray-200">
       <img
         [src]="product.images[0] ? product.images[0] : 'assets/logo/noImage.jpg'"
         [alt]="product.name"
