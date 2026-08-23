@@ -28,6 +28,7 @@ export default class CartComponent implements OnInit  {
   cart = this.cartService.cart;
   total = this.cartService.total;
   logged = false;
+  checkoutStarted = false;
   showModal = false;
   step = 0;
   userId = '';
@@ -47,6 +48,10 @@ export default class CartComponent implements OnInit  {
 
   userConfirm() {
     this.router.navigate(['/auth/login']);
+  }
+
+  startCheckout() {
+    this.checkoutStarted = true;
   }
 
   onLocation(data: any) {
@@ -73,9 +78,13 @@ export default class CartComponent implements OnInit  {
 
   confirmOrder() {
     const orderData = {
-      userId: this.userId,
-      date: new Date(),
-      products: this.cart().map(product => product.id),
+      user_id: this.userId,
+      products: this.cart().map(product => ({
+        name: product.name,
+        price: product.price,
+        quantity: product.quantity
+      })),
+      total: this.total()
     };
     console.log('Order generated', orderData);
 
@@ -92,5 +101,7 @@ export default class CartComponent implements OnInit  {
     this.cartService.cart.set([]);
     this.router.navigate(['/']);
     this.confirmationModal = false;
+    this.checkoutStarted = false;
+    this.step = 0;
   }
 }

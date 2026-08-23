@@ -16,15 +16,21 @@
     </button>
   </div>
 
-  <div *ngIf="logged && step === 0">
+  <div *ngIf="logged && !checkoutStarted" class="flex justify-end mt-2">
+    <button  (click)="startCheckout()" class="bg-blue-600 text-white font-semibold p-2 mt-2 rounded" >
+      Purchase
+    </button>
+  </div>
+
+  <div *ngIf="logged && checkoutStarted && step === 0">
     <app-customer-data (customerData)="onLocation($event)" />
   </div>
 
-  <div *ngIf="logged && step === 1">
+  <div *ngIf="logged && checkoutStarted && step === 1">
     <app-pay-methods (paymentData)="onPayMethod($event)" />
   </div>
 
-  <div *ngIf="logged && showModal">
+  <div *ngIf="logged && checkoutStarted && showModal">
     <div class="fixed z-10 inset-0 overflow-y-auto flex items-center justify-center" aria-labelledby="modal-title" role="dialog" aria-modal="true">
       <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
       <div class="bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:w-full sm:max-w-2xl">
@@ -108,6 +114,3 @@
     </div>
   </div>
 </div>
-
-
-

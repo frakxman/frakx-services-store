@@ -46,7 +46,7 @@ export default class RegisterComponent {
     this.authService.register(this.userForm.value)
       .subscribe({
         next: (user) => {
-          this.router.navigate(['/login']);
+          this.router.navigate(['/auth/login']);
           console.log('User created', user);
         },
         error: (err) => {
