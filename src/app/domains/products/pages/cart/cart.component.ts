@@ -83,8 +83,7 @@ export default class CartComponent implements OnInit  {
         name: product.name,
         price: product.price,
         quantity: product.quantity
-      })),
-      total: this.total()
+      }))
     };
     console.log('Order generated', orderData);
 

@@ -84,7 +84,7 @@ export class CartService {
     this.cart.update(state => state.map( p => p.id === product.id ? { ...p, quantity } : p ));
   }
 
-  generateOrder(orderData: {user_id: string; products: {name: string; price: number; quantity: number;}[]; total: number}) {
+  generateOrder(orderData: {user_id: string; products: {name: string; price: number; quantity: number;}[];}) {
     return this.http.post(`${this.baseUrl}/invoices`, orderData)
   }
 }
