@@ -8,6 +8,7 @@ export interface Product {
   quantity:    number;
   stock:       number;
   images:      string[];
+  categoryId?: Category;
 }
 
 

@@ -1,11 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, inject, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 
 import { RouterLinkWithHref } from '@angular/router';
 
 // Components imports
 import { ProductComponent } from '@products/components/product/product.component';
-import { HeaderComponent } from '@shared/components/header/header.component';
 
 // Modules imports
 import { Category } from '@shared/models/category.model';
@@ -19,26 +18,29 @@ import { ProductsService } from '@shared/services/products.service';
 @Component({
   selector: 'app-list',
   standalone: true,
-  imports: [CommonModule, ProductComponent, HeaderComponent, RouterLinkWithHref],
+  imports: [CommonModule, ProductComponent],
   templateUrl: './list.component.html',
   styleUrl: './list.component.css'
 })
 export default class ListComponent {
 
-  prods = signal<Product[]>([]);
+  allProds = signal<Product[]>([]);
   categs = signal<Category[]>([]);
+  selectedCategoryId = signal<string | null>(null);
+
+  prods = computed(() => {
+    const selected = this.selectedCategoryId();
+    const all = this.allProds();
+    if (!selected) return all;
+    return all.filter(product => product.categoryId?.id === selected);
+  });
 
   private cartService = inject(CartService);
   private productsService = inject(ProductsService);
   private categoriesService = inject(CategoryService);
 
-  @Input() category_id?: string;
-
   ngOnInit() {
     this.getCategories();
-  }
-
-  ngOnChanges() {
     this.getProducts();
   }
 
@@ -46,11 +48,15 @@ export default class ListComponent {
     this.cartService.add(product);
   }
 
+  selectCategory(categoryId: string | null) {
+    this.selectedCategoryId.set(categoryId);
+  }
+
   private getProducts() {
     this.productsService.getProducts()
       .subscribe({
         next: (products) => {
-          this.prods.set(products);
+          this.allProds.set(products);
         },
         error: (error) => {
           console.error(error);
