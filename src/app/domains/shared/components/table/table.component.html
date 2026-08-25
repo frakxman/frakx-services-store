@@ -1,48 +1,48 @@
-<div class="overflow-auto">
-  <table class="table-auto w-full">
+<div class="overflow-auto rounded-2xl border border-white/15 bg-glass backdrop-blur-xl shadow-lg">
+  <table class="table-auto w-full text-white">
     <thead>
-      <tr>
-        <th class="px-4 py-2 lg:table-cell hidden">Image</th>
-        <th class="px-4 py-2">Name</th>
-        <th class="px-4 py-2">Quantity</th>
-        <th class="px-4 py-2 lg:table-cell hidden">Price</th>
-        <th class="px-4 py-2">Total</th>
-        <th class="px-4 py-2 lg:table-cell hidden">Actions</th>
+      <tr class="border-b border-white/15">
+        <th class="px-4 py-3 lg:table-cell hidden text-left text-xs uppercase tracking-wider text-white/60">Image</th>
+        <th class="px-4 py-3 text-left text-xs uppercase tracking-wider text-white/60">Name</th>
+        <th class="px-4 py-3 text-center text-xs uppercase tracking-wider text-white/60">Quantity</th>
+        <th class="px-4 py-3 lg:table-cell hidden text-right text-xs uppercase tracking-wider text-white/60">Price</th>
+        <th class="px-4 py-3 text-right text-xs uppercase tracking-wider text-white/60">Total</th>
+        <th class="px-4 py-3 lg:table-cell hidden text-center text-xs uppercase tracking-wider text-white/60">Actions</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let product of cart()" class="border-t w-full">
-        <td class="px-4 py-2 lg:table-cell hidden">
+      <tr *ngFor="let product of cart()" class="border-b border-white/10 last:border-b-0 hover:bg-white/5 transition-colors">
+        <td class="px-4 py-3 lg:table-cell hidden">
           <img
             [src]="product.images[0] ? product.images[0] : 'assets/logo/noImage.jpg'"
             [alt]="product.name"
-            class="w-6 h-6"
+            class="w-8 h-8 rounded-md object-cover border border-white/15"
           >
         </td>
-        <td class="px-4 py-2 text-center">{{ product.name }}</td>
-        <td class="px-4 py-2 text-center">
-          <div class="flex justify-center items-center">
-            <a *ngIf="router.url === '/cart'" type="button" (click)="add(product)">
-              <svg class="w-4 h-4 mr-2 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <td class="px-4 py-3 font-medium">{{ product.name }}</td>
+        <td class="px-4 py-3 text-center">
+          <div class="flex justify-center items-center gap-2">
+            <a *ngIf="router.url === '/cart'" type="button" (click)="add(product)" class="text-white/60 hover:text-brand-500 transition-colors">
+              <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 7.757v8.486M7.757 12h8.486M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
               </svg>
             </a>
             {{ product.quantity }}
-            <a *ngIf="router.url === '/cart'" type="button" (click)="minus(product)">
-              <svg class="w-4 h-4 ml-2 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <a *ngIf="router.url === '/cart'" type="button" (click)="minus(product)" class="text-white/60 hover:text-brand-500 transition-colors">
+              <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7.757 12h8.486M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
               </svg>
             </a>
           </div>
         </td>
-        <td class="px-4 py-2 text-center lg:table-cell hidden">{{ product.price | currency:'$':'symbol':'1.0' }}</td>
-        <td class="px-4 py-2 text-right">{{ (product.price * product.quantity ) | currency:'$':'symbol':'1.0' }}</td>
-        <td class="px-4 py-2 text-center lg:table-cell hidden">
+        <td class="px-4 py-3 text-right lg:table-cell hidden text-white/80">{{ product.price | currency:'$':'symbol':'1.0' }}</td>
+        <td class="px-4 py-3 text-right font-semibold">{{ (product.price * product.quantity ) | currency:'$':'symbol':'1.0' }}</td>
+        <td class="px-4 py-3 text-center lg:table-cell hidden">
           <button
-            class="bg-red-400 text-white p-2 rounded"
+            class="bg-brand-700/20 hover:bg-brand-700/40 text-brand-400 p-2 rounded-lg border border-brand-700/30 transition-colors"
             (click)="remove(product)"
           >
-            <svg class="w-4 h-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"/>
             </svg>
           </button>
