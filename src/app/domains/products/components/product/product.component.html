@@ -1,16 +1,16 @@
-<div class="group rounded-lg border">
-  <a [routerLink]="['/products', product.id]" class="w-full overflow-hidden rounded-t-lg bg-gray-200">
+<div class="group rounded-2xl border border-white/15 bg-glass backdrop-blur-xl overflow-hidden hover:border-brand-500/40 transition-colors">
+  <a [routerLink]="['/products', product.id]" class="w-full overflow-hidden bg-white/5 block aspect-square">
       <img
         [src]="product.images[0] ? product.images[0] : 'assets/logo/noImage.jpg'"
         [alt]="product.name"
-        class="h-full w-full rounded-t-md object-cover object-center group-hover:opacity-75"
+        class="h-full w-full object-cover object-center group-hover:opacity-80 transition-opacity"
       >
   </a>
   <div class="flex flex-col space-y-2 p-4">
-      <h3 class="text-sm text-gray-700">{{ product.name | titlecase }}</h3>
-      <p class="text-lg font-medium text-gray-900">{{ product.price | currency:'$':'symbol':'1.0' }}</p>
-      <p class="text-sm font-medium text-gray-600">{{ product.description | slice:0:35 }}...</p>
-      <button class="text-black bg-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 w-full" (click)="addCart()">
+      <h3 class="text-sm text-white/70">{{ product.name | titlecase }}</h3>
+      <p class="text-lg font-semibold text-white">{{ product.price | currency:'$':'symbol':'1.0' }}</p>
+      <p class="text-sm text-white/50">{{ product.description | slice:0:35 }}...</p>
+      <button class="text-white bg-brand-700 hover:bg-brand-800 font-medium rounded-lg text-sm px-5 py-2.5 w-full transition-colors" (click)="addCart()">
           Add to cart
       </button>
   </div>
