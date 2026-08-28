@@ -22,7 +22,7 @@
           @for (img of product()?.images; track img; let i = $index) {
             <img
               alt="product image"
-              class="object-cover object-center rounded-lg border-2 border-white/15 cursor-pointer"
+              class="w-full aspect-square object-cover object-center rounded-lg border-2 border-white/15 cursor-pointer"
               [src]="img ? img : 'assets/logo/noImage.jpg'"
               (click)="changeCover(img)"
               [class.border-brand-500]="img === cover()"
