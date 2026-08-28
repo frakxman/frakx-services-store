@@ -32,7 +32,7 @@ export default class ListComponent {
     const selected = this.selectedCategoryId();
     const all = this.allProds();
     if (!selected) return all;
-    return all.filter(product => product.categoryId?.id === selected);
+    return all.filter(product => product.categoryId === selected);
   });
 
   private cartService = inject(CartService);

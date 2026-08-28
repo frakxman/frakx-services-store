@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, inject, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 import { Product } from '@shared/models/product.model';
 
@@ -9,7 +10,7 @@ import { ProductsService } from '@shared/services/products.service';
 @Component({
   selector: 'app-product-detail',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink ],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.css'
 })
