@@ -24,6 +24,7 @@ export class HeaderComponent implements OnInit{
 
   hideSideMenu = signal(true);
   prodsTotal = this.cartService.prodsQuantity;
+  cart = this.cartService.cart;
   user = '';
 
   ngOnInit() {
