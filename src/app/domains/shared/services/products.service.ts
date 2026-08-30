@@ -30,7 +30,7 @@ export class ProductsService {
   }
 
   update(id: string, changes: Partial<Product>) {
-    return this.http.put<Product>(`${this.baseUrl}/products/${id}`, changes);
+    return this.http.patch<Product>(`${this.baseUrl}/products/${id}`, changes);
   }
 
   remove(id: string) {

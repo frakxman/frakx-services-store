@@ -5,7 +5,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap, tap } from 'rxjs';
 
 import { Product } from '@shared/models/product.model';
+import { Category } from '@shared/models/category.model';
 import { ProductsService } from '@shared/services/products.service';
+import { CategoryService } from '@shared/services/category.service';
 
 @Component({
   selector: 'app-form',
@@ -18,8 +20,11 @@ export default class FormComponent {
 
   private fb = inject( FormBuilder );
   private productService = inject(ProductsService);
+  private categoryService = inject(CategoryService);
   private activatedRoute = inject(ActivatedRoute);
   router = inject(Router);
+
+  categs = signal<Category[]>([]);
 
   product: Product = {
     id: '',
@@ -40,10 +45,13 @@ export default class FormComponent {
     price: ['', [Validators.required, Validators.min(1)]],
     quantity: [0],
     stock: ['', [Validators.required]],
+    status: [true],
+    categoryId: [''],
   });
 
   ngOnInit() {
     this.getProducts();
+    this.getCategories();
     if ( !this.router.url.includes('edit') ) return;
     this.activatedRoute.params
     .pipe(
@@ -69,6 +77,18 @@ export default class FormComponent {
       .subscribe({
         next: (products) => {
           this.prods.set(products);
+        },
+        error: (error) => {
+          console.error(error);
+        }
+      });
+  }
+
+  private getCategories() {
+    this.categoryService.getCategories()
+      .subscribe({
+        next: (categories) => {
+          this.categs.set(categories);
         },
         error: (error) => {
           console.error(error);

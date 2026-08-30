@@ -63,15 +63,15 @@
             <select
               name="category"
               id="category"
-              readonly
-              disabled
+              formControlName="categoryId"
               class="bg-white/5 border border-white/15 text-white text-sm rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 block w-full p-2.5"
             >
-                <!-- @for (category of categs(); track $index) {
-                  <option value="{{ category.id }}">
+                <option value="">Select a category</option>
+                @for (category of categs(); track category.id) {
+                  <option [value]="category.id">
                     {{ category.name }}
                   </option>
-                } -->
+                }
             </select>
           </div>
           <!-- Stock -->
@@ -116,6 +116,19 @@
               </div>
             </div>
           </div>
+        </div>
+        <!-- Available for purchase -->
+        <div class="flex items-center gap-2 mb-4">
+          <input
+            type="checkbox"
+            name="status"
+            id="status"
+            formControlName="status"
+            class="w-4 h-4 rounded border border-white/20 bg-white/5 focus:ring-2 focus:ring-brand-500 accent-brand-600"
+          >
+          <label for="status" class="text-sm font-medium text-white/80">
+            Available for purchase
+          </label>
         </div>
         <!-- Image -->
         <div>

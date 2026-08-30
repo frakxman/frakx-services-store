@@ -1,13 +1,13 @@
 <div class="container mx-auto p-4">
   <a
     routerLink="/"
-    class="inline-flex items-center gap-1.5 text-white/70 hover:text-white mb-6 text-sm font-medium transition-colors"
+    class="inline-flex items-center gap-1.5 rounded-lg border border-white/15 bg-white/5 hover:bg-white/10 px-3 py-2 text-white/80 hover:text-white mb-6 text-sm font-medium transition-colors"
   >
     <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
     </svg>
     Back to shop
- </a>
+  </a>
   <div class="flex flex-col md:flex-row space-y-10 md:space-y-0 md:space-x-10">
     <div class="flex flex-col w-full md:w-1/3">
       <div class="w-full rounded-2xl border border-white/15 bg-glass backdrop-blur-xl overflow-hidden">
@@ -42,12 +42,24 @@
       <p class="title-font font-semibold text-2xl text-white mt-5">
         {{ product()?.price | currency:'$':'symbol':'1.0' }}
       </p>
+      <span *ngIf="product()?.status === false" class="inline-block mb-2 text-xs uppercase tracking-wide text-white/40 border border-white/15 rounded px-2 py-1">
+        Not available
+      </span>
       <button
+        *ngIf="product()?.status !== false; else disabledDetailButton"
         class="flex font-semibold bg-brand-700 hover:bg-brand-800 border-0 p-2 mt-10 transition-colors duration-300 ease-in-out focus:ring-2 focus:ring-brand-500 focus:outline-none text-sm px-5 py-2.5 text-center text-white rounded-lg"
         (click)="addToCart()"
         >
         Add To Cart
       </button>
+      <ng-template #disabledDetailButton>
+        <button
+          disabled
+          class="flex font-semibold bg-white/5 border border-white/10 mt-10 text-sm px-5 py-2.5 text-center text-white/40 rounded-lg cursor-not-allowed"
+        >
+          Not available
+        </button>
+      </ng-template>
     </div>
   </div>
 </div>
