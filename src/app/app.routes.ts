@@ -53,6 +53,10 @@ export const routes: Routes = [
         loadComponent: () => import('./domains/admin/pages/products/products.component')
       },
       {
+        path: 'categories',
+        loadComponent: () => import('./domains/admin/pages/categories/categories.component')
+      },
+      {
         path: 'create',
         loadComponent: () => import('./domains/products/pages/form/form.component')
       },

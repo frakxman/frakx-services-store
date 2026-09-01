@@ -19,6 +19,7 @@ export class AdminLayoutComponent {
   links: any[] = [
       { path: '/admin', label: 'Dashboard' },
       { path: '/admin/products', label: 'Products' },
+      { path: '/admin/categories', label: 'Categories' },
       { path: '/admin/create', label: 'Create' },
       { path: '/admin/orders', label: 'Orders' },
       { path: '/admin/users', label: 'Users' }
