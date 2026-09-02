@@ -1,1 +1,31 @@
-<p>categories works!</p>
+<div class="rounded-2xl border border-white/15 bg-glass backdrop-blur-xl shadow-lg overflow-auto">
+  <table class="table-auto w-full text-white">
+    <thead>
+      <tr class="border-b border-white/15">
+        <th class="px-4 py-3"></th>
+        <th class="px-4 py-3 text-left text-xs uppercase tracking-wider text-white/60">
+          Name
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr
+        *ngFor="let category of categories()"
+        class="border-b border-white/10 last:border-b-0 hover:bg-white/5 transition-colors"
+      >
+        <td class="px-4 py-3">
+          <img
+            [src]="category.image ? category.image : 'assets/logo/noImage.jpg'"
+            [alt]="category.name"
+            class="w-8 h-8 rounded-md object-cover border border-white/15"
+          >
+        </td>
+
+        <td class="px-4 py-3 font-medium">
+          {{ category.name }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
