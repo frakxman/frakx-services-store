@@ -46,24 +46,38 @@ export const routes: Routes = [
     path: 'admin',
     component: AdminLayoutComponent,
     canActivate: [canActivateGuard],
-    canMatch: [ canMatchGuard ],
+    canMatch: [canMatchGuard],
     children: [
       {
         path: 'products',
-        loadComponent: () => import('./domains/admin/pages/products/products.component')
+        children: [
+          {
+            path: '',
+            loadComponent: () =>
+              import('./domains/admin/pages/products/products.component')
+          },
+          {
+            path: 'create',
+            loadComponent: () =>
+              import('./domains/products/pages/form/form.component')
+          },
+          {
+            path: 'edit/:id',
+            loadComponent: () =>
+              import('./domains/products/pages/form/form.component')
+          }
+        ]
       },
       {
         path: 'categories',
-        loadComponent: () => import('./domains/admin/pages/categories/categories.component')
-      },
-      {
-        path: 'create',
-        loadComponent: () => import('./domains/products/pages/form/form.component')
-      },
-      {
-        path: 'edit/:id',
-        loadComponent: () => import('./domains/products/pages/form/form.component')
-      },
+        children: [
+          {
+            path: '',
+            loadComponent: () =>
+              import('./domains/admin/pages/categories/categories.component')
+          }
+        ]
+      }
     ]
   },
   {

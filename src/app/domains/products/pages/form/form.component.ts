@@ -49,23 +49,28 @@ export default class FormComponent {
     categoryId: [''],
   });
 
+  isEditMode = false;
+
   ngOnInit() {
-    this.getProducts();
-    this.getCategories();
-    if ( !this.router.url.includes('edit') ) return;
-    this.activatedRoute.params
-    .pipe(
-      switchMap(({ id }) => this.productService.getOne(id)),
-      tap(prod => console.log('Product id', prod.id))
-    ).subscribe({
-      next: prod => {
-        this.productForm.reset({
-          ...prod
-        })
-      },
-      error: () => this.router.navigate(['/products'])
-    });
-  }
+  this.getProducts();
+  this.getCategories();
+
+  const id = this.activatedRoute.snapshot.paramMap.get('id');
+
+  if (!id) return;
+
+  this.isEditMode = true;
+
+  this.productService.getOne(id).subscribe({
+    next: (product) => {
+      this.productForm.reset({
+        ...product
+      });
+    },
+    error: () => this.router.navigate(['/admin/products'])
+  });
+}
+
 
   get currentProduct() {
     const product = this.productForm.value as Product;

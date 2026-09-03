@@ -38,10 +38,14 @@ export default class ProductsComponent {
       });
   }
 
+  create() {
+    this.router.navigate(['/admin/products/create']);
+  }
+
   edit(product: Product) {
     console.log('Edit product', typeof product.id, product.id);
     const _id = product.id;
-    this.router.navigate([`/admin/edit/${_id!}`]);
+    this.router.navigate([`/admin/products/edit/${_id!}`]);
   }
 
   showConfirmationModal(product: any) {
