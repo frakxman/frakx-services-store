@@ -24,10 +24,24 @@ export class CategoryService {
     return this.http.get<Category>(`${this.baseUrl}/categories/${id}`);
   }
 
-  updateCategory(id: string, category: Partial<Category>) {
+  create(category: Omit<Category, 'id'>) {
+    return this.http.post<Category>(
+      `${this.baseUrl}/categories`,
+      category
+    );
+  }
+
+  update(id: string, category: Partial<Category>) {
     return this.http.patch<Category>(
       `${this.baseUrl}/categories/${id}`,
       category
     );
   }
+
+  remove(id: string) {
+    return this.http.delete<void>(
+      `${this.baseUrl}/categories/${id}`
+    );
+  }
+
 }

@@ -1,0 +1,117 @@
+<section class="w-full">
+  <div class="p-4 w-full h-full md:h-auto">
+    <div class="p-4 rounded-2xl border border-white/15 bg-glass backdrop-blur-xl shadow-lg sm:p-5">
+
+      <!-- Header -->
+      <div class="flex justify-between items-center pb-4 mb-4 border-b border-white/15">
+        <h3 class="text-lg font-semibold text-white">
+          {{ isEditMode ? 'Edit' : 'Add' }} Category
+        </h3>
+      </div>
+
+      <!-- Body -->
+      <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+
+        <div class="grid gap-4 mb-4 sm:grid-cols-2">
+
+          <!-- Name -->
+          <div>
+            <label
+              for="name"
+              class="block mb-2 text-sm font-medium text-white/80"
+            >
+              Name
+            </label>
+
+            <input
+              type="text"
+              id="name"
+              formControlName="name"
+              class="bg-white/5 border border-white/15 text-white text-sm rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 block w-full p-2.5 placeholder-white/40"
+              placeholder="Type category name"
+            >
+
+            <div
+              *ngIf="categoryForm.controls['name'].invalid && categoryForm.controls['name'].touched"
+              class="text-brand-400 text-sm mt-1"
+            >
+              <div *ngIf="categoryForm.controls['name'].errors?.['required']">
+                Name is required.
+              </div>
+
+              <div *ngIf="categoryForm.controls['name'].errors?.['minlength']">
+                Name must be at least 3 characters long.
+              </div>
+            </div>
+          </div>
+
+          <!-- Image -->
+          <div>
+            <label
+              for="image"
+              class="block mb-2 text-sm font-medium text-white/80"
+            >
+              Image URL
+            </label>
+
+            <input
+              type="text"
+              id="image"
+              formControlName="image"
+              class="bg-white/5 border border-white/15 text-white text-sm rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 block w-full p-2.5 placeholder-white/40"
+              placeholder="https://example.com/image.jpg"
+            >
+
+            <div
+              *ngIf="categoryForm.controls['image'].invalid && categoryForm.controls['image'].touched"
+              class="text-brand-400 text-sm mt-1"
+            >
+              <div *ngIf="categoryForm.controls['image'].errors?.['required']">
+                Image URL is required.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Image preview -->
+        <div
+          *ngIf="categoryForm.controls['image'].value"
+          class="mb-4"
+        >
+          <p class="block mb-2 text-sm font-medium text-white/80">
+            Preview
+          </p>
+
+          <img
+            [src]="categoryForm.controls['image'].value"
+            [alt]="categoryForm.controls['name'].value || 'Category preview'"
+            class="w-24 h-24 rounded-lg object-cover border border-white/15"
+          >
+        </div>
+
+        <!-- Submit -->
+        <button
+          type="submit"
+          class="mt-5 inline-flex items-center bg-brand-700 hover:bg-brand-800 focus:ring-2 focus:outline-none focus:ring-brand-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center text-white transition-colors"
+        >
+          <svg
+            class="mr-1 -ml-1 w-6 h-6"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 5a1 1 0 0 1 1 1v3h3a1 1 0 1 1 0 2h-3v3a1 1 0 1 1-2 0v-3H6a1 1 0 1 1 0-2h3V6a1 1 0 0 1 1-1z"
+              clip-rule="evenodd"
+            />
+          </svg>
+
+          {{ isEditMode ? 'Edit' : 'Add' }} Category
+        </button>
+
+      </form>
+    </div>
+  </div>
+</section>

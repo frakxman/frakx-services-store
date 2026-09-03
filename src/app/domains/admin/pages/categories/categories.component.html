@@ -1,4 +1,26 @@
 <div class="rounded-2xl border border-white/15 bg-glass backdrop-blur-xl shadow-lg overflow-auto">
+  <div class="flex justify-end mb-4">
+    <button
+      type="button"
+      class="inline-flex items-center bg-brand-700 hover:bg-brand-800 focus:ring-2 focus:outline-none focus:ring-brand-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center text-white transition-colors mt-4 mr-14"
+      (click)="create()"
+    >
+      <svg
+        class="mr-1 -ml-1 w-5 h-5"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
+          clip-rule="evenodd"
+        />
+      </svg>
+      Create Category
+    </button>
+  </div>
+
   <table class="table-auto w-full text-white">
     <thead>
       <tr class="border-b border-white/15">
@@ -34,7 +56,9 @@
 
             <!-- Edit -->
             <button
+              type="button"
               class="bg-white/10 hover:bg-white/15 text-white p-2 rounded-lg border border-white/15 transition-colors"
+              (click)="edit(category)"
             >
               <svg
                 class="w-3 h-3"
@@ -57,7 +81,9 @@
 
             <!-- Delete -->
             <button
+              type="button"
               class="bg-brand-700/20 hover:bg-brand-700/40 text-brand-400 p-2 rounded-lg border border-brand-700/30 transition-colors"
+              (click)="showConfirmationModal(category)"
             >
               <svg
                 class="w-3 h-3"
@@ -77,10 +103,59 @@
                 />
               </svg>
             </button>
-
           </div>
         </td>
       </tr>
     </tbody>
   </table>
+</div>
+
+<div
+  *ngIf="showModal"
+  class="fixed z-[9999] inset-0 bg-black/70 backdrop-blur-sm flex justify-center items-center p-4"
+>
+  <div class="rounded-2xl border border-white/15 bg-glass backdrop-blur-xl shadow-2xl max-w-md w-full overflow-hidden">
+
+    <div class="bg-white/5 font-semibold px-4 py-5 border-b border-white/15 sm:px-6">
+      <h3 class="text-lg leading-6 font-medium text-white" id="modal-title">
+        Confirm deletion
+      </h3>
+    </div>
+
+    <div class="px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+      <div class="sm:flex sm:items-start">
+        <div class="mt-3 text-center sm:mt-0 sm:text-left w-full">
+          <p class="text-white/80">
+            Are you sure you want to remove this category?
+          </p>
+
+          <br>
+
+          <h2 class="text-center font-semibold text-white">
+            {{ categoryToRemove.name | titlecase }}
+          </h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white/5 px-4 py-3 sm:px-6 sm:flex sm:justify-between border-t border-white/15">
+
+      <button
+        type="button"
+        class="w-full inline-flex justify-center rounded-lg border border-transparent shadow-sm px-4 py-2 bg-brand-700 hover:bg-brand-800 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-canvas focus:ring-brand-500 sm:w-auto sm:text-sm transition-colors"
+        (click)="remove(categoryToRemove)"
+      >
+        Confirm
+      </button>
+
+      <button
+        type="button"
+        class="mt-3 w-full inline-flex justify-center rounded-lg border border-white/15 shadow-sm px-4 py-2 bg-white/5 hover:bg-white/10 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-canvas focus:ring-brand-500 sm:mt-0 sm:w-auto sm:text-sm transition-colors"
+        (click)="closeModal()"
+      >
+        Cancel
+      </button>
+
+    </div>
+  </div>
 </div>
